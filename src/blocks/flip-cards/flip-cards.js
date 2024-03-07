@@ -7,133 +7,159 @@ export default function flipCards() {
     content: `
     <div class="block-flip-cards">
       <style>
-      .block-flip-cards * {
-        box-sizing: border-box;
-      }
-      .block-flip-cards .section-plans {
-        display: flex;
-        justify-content: center;
-        font-family: "Lato", sans-serif;
-      }
-      .block-flip-cards .card {
-        text-align: center;
-        position: relative;
-        perspective: 150rem;
-        background-color: #fff;
-        width: 300px;
-        height: 400px;
-        margin: 10px;
-      }
-      .block-flip-cards .card__side--front img {
-        width: 100%;
-      }
-      .block-flip-cards .card__side--front h3 {
-        font-size: 16px;
-        font-weight: 700;
-      }
-      .block-flip-cards .card h4 {
-        margin: 0;
-        font-weight: 500;
-      }
-      .block-flip-cards .card__side {
-        transition: all 0.8s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        backface-visibility: hidden;
-        border-radius: 3px;
-        overflow: hidden;
-        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-      }
-      .block-flip-cards .card__side--front,
-      .block-flip-cards .card__side--back {
-        padding: 20px;
-      }
-      .block-flip-cards .card__side--back {
-        transform: rotateY(180deg);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #fff;
-        transform: rotateY(180deg);
-      }
-      .block-flip-cards .card:hover .card__side--front {
-        transform: rotateY(-180deg);
-      }
-      .block-flip-cards .card:hover .card__side--back {
-        transform: rotateY(0);
-      }
-      .block-flip-cards .btn.btn--white {
-        text-transform: uppercase;
-        color: #000;
-        text-decoration: none;
-        background-color: #fff;
-        color: #777;
-        border-radius: 4px;
-        padding: 16px 24px;
-        font-size: 14px;
-      }
-      .block-flip-cards .card__side {
-        width: 100%;
-        height: 100%;
-      }
-      .block-flip-cards .card__side--front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #fff;
-      }
-      .block-flip-cards .card-side-config button {
-        margin-right: 10px;
-        color: #1f75fe;
-        border: 1px solid #1f75fe;
-        padding: 8px 12px;
-        border-radius: 8px;
-        background-color: white;
-        border: 1px solid #1f75fe;
-        cursor: pointer;
-      }
-      .block-flip-cards .card-side-config button.active {
-        background-color: #1f75fe;
-        color: #fff;
-      }
-      .block-flip-cards .card.show-front .card__side--front {
-        transform: none !important;
-      }
-      .block-flip-cards .card.show-front:hover .card__side--back {
-        transform: rotateY(180deg);
-      }
-      .block-flip-cards .card.show-back .card__side--front {
-        transform: rotateY(180deg);
-      }
-      .block-flip-cards .card.show-back .card__side--back {
-        transform: none !important;
-      }
-      @media (max-width: 1000px) {
-        .block-flip-cards .card {
-          height: 250px;
+        .block-flip-cards * {
+          box-sizing: border-box;
         }
-        .block-flip-cards .card__side--back p {
-          display: none;
-        }
-      }
       
-      .gjs-dashed .block-flip-cards .card-side-config {
-        display: block !important;
-        margin-bottom: 10px;
-      }
+        .block-flip-cards .section-plans {
+          display: flex;
+          justify-content: space-between;
+          font-family: "Lato", sans-serif;
+          max-width: 44rem;
+          margin: 0 auto;
+        }
+      
+        .block-flip-cards .card {
+          text-align: center;
+          position: relative;
+          perspective: 50rem;
+          background-color: #fff;
+          width: 12.5rem;
+          height: 20rem;
+          margin: 0.833rem;
+        }
+      
+        .block-flip-cards .card__side--front img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+      
+        .block-flip-cards .card__side--front h3 {
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      
+        .block-flip-cards .card h4 {
+          margin: 0;
+          font-weight: 500;
+        }
+      
+        .block-flip-cards .card__side {
+          transition: transform 0.8s ease;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          backface-visibility: hidden;
+          border-radius: 0.133rem;
+          overflow: hidden;
+          box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.15);
+        }
+      
+        .block-flip-cards .card__side--front,
+        .block-flip-cards .card__side--back {
+          padding: 0.833rem;
+        }
+      
+        .block-flip-cards .card__side--back {
+          transform: rotateY(180deg);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+        }
+      
+        .block-flip-cards .card:hover .card__side--front {
+          transform: rotateY(-180deg);
+        }
+      
+        .block-flip-cards .card:hover .card__side--back {
+          transform: rotateY(0);
+        }
+      
+        .block-flip-cards .btn.btn--white {
+          text-transform: uppercase;
+          color: #000;
+          text-decoration: none;
+          background-color: #fff;
+          color: #777;
+          border-radius: 0.133rem;
+          padding: 0.833rem 1.2rem;
+          font-size: 1rem;
+        }
+      
+        .block-flip-cards .card__side {
+          width: 100%;
+          height: 100%;
+        }
+      
+        .block-flip-cards .card__side--front {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+        }
+      
+        .block-flip-cards .card-side-config button {
+          margin-right: 0.133rem;
+          color: #1f75fe;
+          border: 0.033rem solid #1f75fe;
+          padding: 0.133rem 0.2rem;
+          border-radius: 0.133rem;
+          background-color: white;
+          border: 0.033rem solid #1f75fe;
+          cursor: pointer;
+        }
+      
+        .block-flip-cards .card-side-config button.active {
+          background-color: #1f75fe;
+          color: #fff;
+        }
+      
+        .block-flip-cards .card.show-front .card__side--front {
+          transform: none !important;
+        }
+      
+        .block-flip-cards .card.show-front:hover .card__side--back {
+          transform: rotateY(180deg);
+        }
+      
+        .block-flip-cards .card.show-back .card__side--front {
+          transform: rotateY(180deg);
+        }
+      
+        .block-flip-cards .card.show-back .card__side--back {
+          transform: none !important;
+        }
 
+        .gjs-dashed .block-flip-cards .card-side-config {
+          display: block !important;
+          margin-bottom: 0.133rem;
+        }
 
+        @media (max-width: 36rem) {
+          .block-flip-cards .section-plans {
+            flex-direction: column;
+          }
+          .block-flip-cards .card {
+            margin: 0 auto;
+          }
+          .block-flip-cards .card:nth-child(2) {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+          }
+        }
       </style>
+  
       <div class="card-side-config" style="display: none;" data-gjs-editable="false">
         <button class="card-side-config-btn" data-config="show-front">
           Edit card front
