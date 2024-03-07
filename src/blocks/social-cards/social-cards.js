@@ -1,5 +1,3 @@
-import styles from './social-cards.scss';
-
 export default function socialCards() {
   return {
     label: 'Social Cards',
@@ -8,7 +6,108 @@ export default function socialCards() {
     `,
     content: `
       <div class="block-social-cards" style="margin:100px; padding:25px;">
-        <style>${styles}</style>
+        <style>
+        .block-social-cards .container {
+          width: 100%;
+          max-width: 1000px;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          margin: 0 auto;
+        }
+        .block-social-cards .container .card {
+          position: relative;
+          border-radius: 10px;
+        }
+        .block-social-cards .container .card .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #f00;
+          transition: 0.7s;
+          z-index: 1;
+        }
+        .block-social-cards .container .card .icon img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 80px;
+          transition: 0.7s;
+          color: #fff;
+        }
+        .block-social-cards .container .card:nth-child(1) .icon {
+          background: #e07768;
+        }
+        .block-social-cards .container .card:nth-child(2) .icon {
+          background: #6eadd4;
+        }
+        .block-social-cards .container .card:nth-child(3) .icon {
+          background: #4aada9;
+        }
+        .block-social-cards .container .card .face {
+          width: 300px;
+          height: 200px;
+          transition: 0.5s;
+        }
+        .block-social-cards .container .card .face.face1 {
+          position: relative;
+          background: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+          transform: translateY(100px);
+        }
+        .block-social-cards .container .card .face.face1 .content {
+          opacity: 1;
+          transition: 0.5s;
+        }
+        .block-social-cards .container .card .face.face1 .content i {
+          max-width: 100px;
+        }
+        .block-social-cards .container .card .face.face2 {
+          position: relative;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          box-sizing: border-box;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+          transform: translateY(-100px);
+        }
+        .block-social-cards .container .card .face.face2 .content p, .block-social-cards .container .card .face.face2 .content h3 {
+          margin: 0;
+          padding: 0;
+        }
+        .block-social-cards .container .card .face.face2 .content p {
+          text-align: center;
+          color: #414141;
+        }
+        .block-social-cards .container .card .face.face2 .content h3 {
+          margin-bottom: 10px;
+          font-size: 24px;
+          text-align: center;
+          color: #414141;
+        }
+        .block-social-cards .container .card:hover .face.face1 {
+          background: #ff0057;
+          transform: translateY(0);
+        }
+        .block-social-cards .container .card:hover .face.face1 .content {
+          opacity: 1;
+        }
+        .block-social-cards .container .card:hover .face.face2 {
+          transform: translateY(0);
+        }
+        .block-social-cards .container a {
+          text-decoration: none;
+          color: #414141;
+        }
+        </style>
         <div class="container">
           <div class="card">
             <div class="face face1">
